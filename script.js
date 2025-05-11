@@ -1,9 +1,11 @@
+// Inicializa o player do YouTube
 let player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('videoPlayer', {
         events: {
-            'onReady': onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
         }
     });
 }
@@ -13,6 +15,13 @@ function onPlayerReady(event) {
     event.target.unMute();
 }
 
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        fbq('track', 'ViewContent');
+    }
+}
+
+// Controle do vídeo
 document.getElementById('videoCover').addEventListener('click', function() {
     const clickText = document.getElementById('clickText');
     clickText.classList.add('disintegrate');
@@ -26,10 +35,10 @@ document.getElementById('videoCover').addEventListener('click', function() {
     }, 500);
 });
 
-// Track CTA clicks
+// Rastreamento de eventos nos botões
 document.querySelectorAll('.cta-button').forEach(button => {
     button.addEventListener('click', function() {
-        // Here you would typically send this event to your analytics
-        console.log('CTA clicked:', this.textContent.trim());
+        const buttonId = this.id || 'cta_generic';
+        fbq('trackCustom', buttonId + '_Click');
     });
 });
