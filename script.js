@@ -1,4 +1,3 @@
-// Inicializa o player do YouTube
 let player;
 
 function onYouTubeIframeAPIReady() {
