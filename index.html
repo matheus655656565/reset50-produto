@@ -3,11 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 RESET50 - Transforme Seu Corpo em 30 Dias</title>
+    <title>🔥 RESET50 - O Segredo Proibido Para Emagrecer Depois dos 50</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <p>🍪 Nós usamos cookies para garantir a melhor experiência em nosso site. Ao continuar, você concorda com nossa <a href="#" style="color: var(--greed);">Política de Privacidade</a>.</p>
+        <button class="cookie-btn" onclick="acceptCookies()">ACEITAR</button>
+    </div>
 
+    <header class="hero-header">
+        <div class="container">
+            <div class="logo">RESET<span>50</span></div>
+            <div class="tagline">O MÉTODO PROIBIDO QUE ESTÁ TRANSFORMANDO CORPOS DEPOIS DOS 50</div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="urgency-banner">
+            ⏰ ÚLTIMAS VAGAS DISPONÍVEIS! <span id="countdown"></span>
+        </div>
+        
+        <div class="video-container">
+            <iframe id="videoPlayer" src="https://www.youtube.com/embed/DdE4ssPc96k?enablejsapi=1&autoplay=0&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <div class="video-cover" id="videoCover" style="background-image: url('https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="click-text" id="clickText">CLIQUE PARA REVELAR O SEGREDO</div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="#oferta" class="cta-button" onclick="fbq('track', 'Lead');">
+                <i class="fas fa-fire"></i> QUERO ME TRANSFORMAR AGORA
+            </a>
+        </div>
+        
+        <div class="benefits">
+            <h2>O QUE VOCÊ VAI CONQUISTAR:</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div><strong>50 RECEITAS AFRODISÍACAS</strong> que aceleram seu metabolismo naturalmente</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div><strong>PLANO ALIMENTAR DE 30 DIAS</strong> - Feito para corpos maduros</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <div><strong>LISTA DE COMPRAS INTELIGENTE</strong> - Economize até R$200/mês</div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-unlock"></i>
+                </div>
+                <div><strong>ACESSO VITALÍCIO</strong> - Ganhe mais um E-book Gratuito </div>
+            </div>
+        </div>
+
+        <!-- Depoimentos que causam inveja -->
+        <div class="testimonials">
+            <div class="testimonial">
+                <p class="testimonial-text">"Depois dos 50, achava que nunca mais teria o corpo dos meus 30. O RESET50 mudou tudo! Perdi 12kg em 8 semanas e meu marido não tira os olhos de mim!"</p>
+                <div class="testimonial-author">Márcia, 52 anos</div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"Finalmente um método que respeita meu metabolismo lento! Sem exercícios chatos, só comendo bem. 9kg a menos e minha diabetes melhorou 70%!"</p>
+                <div class="testimonial-author">Carlos, 58 anos</div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="#oferta" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">
+                <i class="fas fa-heartbeat"></i> SIM, QUERO MINHA TRANSFORMAÇÃO
+            </a>
+        </div>
+        
+        <div class="guarantee">
+            <h3><i class="fas fa-medal"></i> GARANTIA DE 7 DIAS OU SEU DINHEIRO DE VOLTA</h3>
+            <p>Se em 1 semana você não estiver completamente satisfeito(a), devolvemos cada centavo. Sem perguntas, sem burocracia.</p>
+        </div>
+        
+        <div class="cta-section" id="oferta">
+            <a href="https://pay.kiwify.com.br/FFuzJHG" class="cta-button pulse" onclick="fbq('track', 'Purchase', {value: 97.00, currency: 'BRL'});">
+                <i class="fas fa-gem"></i> QUERO MEU ACESSO COM DESCONTO EXCLUSIVO
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--lust); font-weight: 700;">
+                ⚠️ ATENÇÃO: Apenas 7 vagas restantes com este preço!
+            </p>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 RESET50. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#" style="color: #b2bec3; text-decoration: none;">Termos de Uso</a>
+                <a href="#" style="color: #b2bec3; text-decoration: none;">Política de Privacidade</a>
+                <a href="#" style="color: #b2bec3; text-decoration: none;">Política de Cookies</a>
+                <a href="#" style="color: #b2bec3; text-decoration: none;">Contato</a>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem;">
+                Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+    
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -18,7 +137,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2526059111073265'); // SUBSTITUA PELO SEU PIXEL ID
+    fbq('init', '2526059111073265');
     fbq('track', 'PageView');
     </script>
     <noscript>
@@ -26,101 +145,5 @@
          src="https://www.facebook.com/tr?id=2526059111073265&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
-</head>
-<body>
-    <header class="hero-header">
-        <div class="container">
-            <div class="logo">RESET<span>50</span></div>
-            <div class="tagline">O Método Definitivo Para Emagrecer Comendo Bem</div>
-        </div>
-    </header>
-    
-    <main class="container">
-        <div class="urgency-banner">
-            ⏳ OFERTA POR TEMPO LIMITADO - GARANTA SEU ACESSO HOJE!
-        </div>
-        
-        <div class="video-container">
-            <iframe id="videoPlayer" src="https://www.youtube.com/embed/DdE4ssPc96k?enablejsapi=1&autoplay=0&controls=0&modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-            <div class="video-cover" id="videoCover" style="background-image: url('https://img.youtube.com/vi/DdE4ssPc96k/maxresdefault.jpg');">
-                <div class="play-btn">
-                    <i class="fas fa-play"></i>
-                </div>
-                <div class="click-text" id="clickText">Clique aqui para assistir</div>
-            </div>
-        </div>
-        
-        <div class="cta-section">
-            <a href="https://pay.kiwify.com.br/3TLy1ss" class="cta-button" onclick="fbq('track', 'Lead');">
-                <i class="fas fa-bolt"></i> QUERO TRANSFORMAR MEU CORPO AGORA
-            </a>
-        </div>
-        
-        <div class="benefits">
-            <h2 style="text-align: center; margin-bottom: 1.5rem;">O RESET50 VAI TE ENTREGAR:</h2>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <div><strong>50 receitas comprovadas</strong> para acelerar seu metabolismo</div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <div><strong>Plano alimentar completo</strong> para 30 dias</div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <div><strong>Lista de compras inteligente</strong> para economizar tempo e dinheiro</div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <div><strong>Acesso vitalício</strong> para você ver quando quiser</div>
-            </div>
-        </div>
-        
-        <div class="cta-section">
-            <a href="https://pay.kiwify.com.br/3TLy1ss" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">
-                <i class="fas fa-check-circle"></i> SIM, QUERO MEU ACESSO AGORA
-            </a>
-        </div>
-        
-        <div class="guarantee">
-            <h3><i class="fas fa-shield-alt" style="color: var(--primary);"></i> GARANTIA DE 7 DIAS</h3>
-            <p>Se em 7 dias você não estiver satisfeito(a), devolvemos 100% do seu dinheiro sem burocracia!</p>
-        </div>
-        
-        <div class="cta-section" id="oferta">
-            <a href="https://pay.kiwify.com.br/3TLy1ss" class="cta-button pulse" onclick="fbq('track', 'Purchase', {value: 97.00, currency: 'BRL'});">
-                <i class="fas fa-gem"></i> GARANTIR MEU RESET50 COM DESCONTO
-            </a>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #e74c3c; font-weight: 600;">
-                ⚠️ Vagas limitadas - Oferta válida apenas para os primeiros 50 inscritos
-            </p>
-        </div>
-    </main>
-    
-    <footer class="footer">
-        <div class="container">
-            <p>© 2023 RESET50. Todos os direitos reservados.</p>
-            <p style="margin-top: 1rem; font-size: 0.8rem;">
-                <a href="#" style="color: #b2bec3; text-decoration: none;">Termos de Uso</a> | 
-                <a href="#" style="color: #b2bec3; text-decoration: none;">Política de Privacidade</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="script.js"></script>
 </body>
 </html>
