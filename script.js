@@ -47,10 +47,6 @@ const PROJECTS = [
     },
 ];
 
-// Array de palavras para animação do título
-const words = ["DESIGN", "DESENVOLVIMENTO", "ESTRATÉGIA", "INOVAÇÃO"];
-let wordIndex = 0;
-
 // Elementos DOM
 const animatedWordElement = document.getElementById('animated-word');
 const modal = document.getElementById('modal');
@@ -65,53 +61,15 @@ const faqQuestions = document.querySelectorAll('.faq-question');
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
-    // Iniciar animação de palavras
-    startWordAnimation();
+    // Definir palavra fixa no título
+    animatedWordElement.textContent = "DESIGN";
     
     // Definir ano atual no footer
     currentYearElement.textContent = new Date().getFullYear();
     
     // Adicionar event listeners
     setupEventListeners();
-    
-    // Configurar observador de interseção para animações
-    setupIntersectionObserver();
 });
-
-// Animação de palavras no título
-function startWordAnimation() {
-    // Mostrar a primeira palavra
-    animateWord(words[wordIndex]);
-    
-    // Mudar a palavra a cada 3 segundos
-    setInterval(() => {
-        wordIndex = (wordIndex + 1) % words.length;
-        animateWord(words[wordIndex]);
-    }, 3000);
-}
-
-function animateWord(word) {
-    // Limpar o conteúdo atual
-    animatedWordElement.innerHTML = '';
-    
-    // Adicionar cada letra com um atraso
-    word.split('').forEach((char, index) => {
-        const span = document.createElement('span');
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.display = 'inline-block';
-        span.style.opacity = '0';
-        span.style.transform = 'translateY(50px)';
-        
-        animatedWordElement.appendChild(span);
-        
-        // Animar a letra após um delay
-        setTimeout(() => {
-            span.style.transition = 'opacity 0.5s, transform 0.5s';
-            span.style.opacity = '1';
-            span.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
-}
 
 // Configurar event listeners
 function setupEventListeners() {
@@ -180,43 +138,3 @@ function closeModal() {
     modal.classList.remove('open');
     document.body.style.overflow = 'auto';
 }
-
-// Configurar observador de interseção para animações
-function setupIntersectionObserver() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-    
-    // Observar todos os elementos com a classe fade-in
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// Adicionar classes de animação aos elementos
-function addAnimationClasses() {
-    // Adicionar classe fade-in para todas as seções
-    const sections = document.querySelectorAll('.section > div, .feature, .project-card');
-    sections.forEach((section, index) => {
-        section.classList.add('fade-in');
-        section.style.setProperty('--index', index);
-    });
-    
-    // Adicionar classe stagger-children para containers
-    const containers = document.querySelectorAll('.features-grid, .projects-grid');
-    containers.forEach(container => {
-        container.classList.add('stagger-children');
-    });
-}
-
-// Chamar a função para adicionar classes de animação após o carregamento
-window.addEventListener('load', addAnimationClasses);
